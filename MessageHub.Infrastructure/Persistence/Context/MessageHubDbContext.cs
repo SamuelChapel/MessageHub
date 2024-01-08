@@ -18,11 +18,6 @@ public sealed class MessageHubDbContext : DbContext
         optionsBuilder.UseSqlServer("Data Source=MSI; Initial Catalog=MessageHub; Integrated Security=SSPI; TrustServerCertificate=True");
     }
 
-    public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
-    {
-        return base.SaveChangesAsync(cancellationToken);
-    }
-
     public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
     {
         ChangeTracker
